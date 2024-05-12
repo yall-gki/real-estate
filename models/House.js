@@ -3,6 +3,11 @@ import mongoose from 'mongoose';
 
 // Define a schema for the House model
 const houseSchema = new mongoose.Schema({
+    propertyType : {
+         enum:["appartement","house","land"]
+
+
+    },
     images: [String], // Array of image URLs
     status: {
         type: String,
@@ -30,6 +35,7 @@ const houseSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    
     address: {
         type: String,
         required: true
@@ -38,6 +44,13 @@ const houseSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    balcony : {
+type: Boolean
+    },
+    garden : {
+        type : Boolean
+    }
+    ,
     yearBuilt: {
         type: Number,
         required: true

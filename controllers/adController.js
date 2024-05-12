@@ -44,3 +44,39 @@ const { images, status, price,  surface, address, yearBuilt } = req.body;
 
 
 }
+
+
+export const getHouses = async (req,res)=>{
+
+try {
+   const houses = await House.find()
+   res.status(200).json({message : "success!", houses})
+
+
+
+} catch (error) {
+   res.status(500).json({
+      message :"internal error",error
+   })
+}
+
+
+}
+
+export const getLands = async (req,res)=>{
+
+   try {
+      const lands = await Land.find()
+      res.status(200).json({message : "success!", lands})
+   
+   
+   
+   } catch (error) {
+      res.status(500).json({
+         message :"internal error",error
+      })
+   }
+   
+   
+   }
+
